@@ -36,7 +36,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
     //////////////////////////////  생 성 자  //////////////////////////////
 
     @NonNull
-    @Override // ViewHolder 객체를 생성하여 리턴한다.
+    @Override   // ViewHolder 객체를 생성하여 리턴한다.
     public CustomAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.recyclerview_item, parent, false);
@@ -45,13 +45,13 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
         return viewHolder;
     }
 
-    @Override // ViewHolder 안의 내용을 position에 해당하는 데이터로 교체한다.
+    @Override   // ViewHolder 안의 내용을 position에 해당하는 데이터로 교체한다.
     public void onBindViewHolder(@NonNull CustomAdapter.ViewHolder holder, int position) {
         String text = localDataSet.get(position);
         holder.textView.setText(text);
     }
 
-    @Override // 전체 데이터의 갯수를 리턴한다.
+    @Override   // 전체 데이터의 갯수를 리턴한다.
     public int getItemCount() {
         return localDataSet.size();
     }
